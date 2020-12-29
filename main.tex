@@ -32,9 +32,9 @@
 \bibliographystyle{abbrvnat}
 \setcitestyle{authoryear,open={((},close={))}}
 
-\newcommand\wordcount{
-    \immediate\write18{texcount -sub=section \jobname.tex  | grep "Section" | sed -e 's/+.*//' | sed -n \thesection p > \jobname-words.sum}%
-    \input{\jobname-words.sum} words
+\newcommand\wordcount[1]{
+    \immediate\write18{texcount -sum=[1,0,0] -sub=section #1.tex  | grep "Section" | sed -e 's/+.*//' | sed -n \thesection p > \jobname-words.sum}%
+    \medskip\par\input{\jobname-words.sum} words
 }
 
 % CHANGE TO YOU NEEDS HERE
@@ -68,9 +68,12 @@ In the next paragrpah discuss the differences between the Postgres and R solutio
 Name a few advantages \textbf{and} disadvantages for both solutions. 
 
 % this does not yet work...
-%\wordcount
+\wordcount{main}
 \section{Chapter 2:}
 
+Lorem ipsum dolor sit amet
+
+\wordcount{main}
 
 \bibliography{bibliography}
 \end{document}
