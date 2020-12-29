@@ -32,6 +32,10 @@
 \bibliographystyle{abbrvnat}
 \setcitestyle{authoryear,open={((},close={))}}
 
+\newcommand\wordcount{
+    \immediate\write18{texcount -sub=section \jobname.tex  | grep "Section" | sed -e 's/+.*//' | sed -n \thesection p > \jobname-words.sum}%
+    \input{\jobname-words.sum} words
+}
 
 % CHANGE TO YOU NEEDS HERE
 \title{HOBO Report: Your title goes here}
@@ -53,11 +57,18 @@
 
 \section{Temperature indices}
 
+\subsection{SQL code}
 An overview of temperature indices was implemented using a \texttt{VIEW} as defined in lising \ref{lst:view_1}
 
 \lstinputlisting[label={lst:view_1},caption={create statement for view},]{./sql/temperature_indices.sql}
-  
 
+\subsection{discuss}
+
+In the next paragrpah discuss the differences between the Postgres and R solution for calculating temperature indices. 
+Name a few advantages \textbf{and} disadvantages for both solutions. 
+
+% this does not yet work...
+%\wordcount
 \section{Chapter 2:}
 
 
