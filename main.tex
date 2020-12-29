@@ -30,7 +30,7 @@
 %   \citet{ref} for a text citation
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
-\setcitestyle{authoryear,open={((},close={))}}
+\setcitestyle{authoryear,open={(},close={)}}
 
 \newcommand\wordcount[1]{
     \immediate\write18{texcount -sum=[1,0,0] -sub=section #1.tex  | grep "Section" | sed -e 's/+.*//' | sed -n \thesection p > \jobname-words.sum}%
@@ -38,7 +38,7 @@
 }
 
 % CHANGE TO YOU NEEDS HERE
-\title{HOBO Report: Your title goes here}
+\title{SQL Report: Your title goes here}
 \author{Your Name}
 \date{January 2021}
 
@@ -64,14 +64,56 @@ An overview of temperature indices was implemented using a \texttt{VIEW} as defi
 
 \subsection{discuss}
 
-In the next paragrpah discuss the differences between the Postgres and R solution for calculating temperature indices. 
+% REPLACE WITH YOUR TEXT HERE
+In the next paragraph discuss the differences between the Postgres and R solution for calculating temperature indices. 
 Name a few advantages \textbf{and} disadvantages for both solutions. 
 
 % this does not yet work...
 \wordcount{main}
-\section{Chapter 2:}
 
-Lorem ipsum dolor sit amet
+
+\section{Verify results}
+
+% REPLACE WITH YOUR TEXT HERE
+Compare your SQL calculated indices to the R calculated indices. Do they differ and if they do, why?
+
+\wordcount{main}
+
+\section{Spatial variability}
+
+% REPLACE WITH YOUR TEXT HERE
+Describe the variability of your sensor compared to the others this year. 
+You might also want to place some citations. Check out the comments in the source 
+\texttt{main.tex} for the commands. 
+If you want to cite your HOBO report here, add an bibliography entry to the \texttt{bibliography.bib} like:
+
+\begin{verbatim}
+@article{hobo,
+    author={Bar Foo},
+    year=2021,
+    journal={Data collection, -management, -visualization lecture},
+    title={HOBO Report}
+}
+\end{verbatim}
+
+You can cite it with the \texttt{\textbackslash citep\{hobo\}} command \citep{hobo}.
+
+\wordcount{main}
+
+
+\section{Indices across time and space}
+
+% REPLACE WITH YOUR TEXT HERE
+This last section should focus on the question how this years' measurements compare 
+to the last few years. For this, you are asked to produce a number of graphs. 
+The best practice is to generate PDF graphics and include them directly here.
+The necessary commands are already loaded in this template.
+
+You can even automate your workflow further and run your scripts producing the 
+PDFs in this repository, saving them to the \texttt{'./figures/'} subfolder. 
+This will refresh the figures in the report whenever, your scripts overwrite them.
+
+\textit{An example how to add the figures will follow}
 
 \wordcount{main}
 
