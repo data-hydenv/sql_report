@@ -33,8 +33,8 @@
 \setcitestyle{authoryear,open={(},close={)}}
 
 \newcommand\wordcount[1]{
-    \immediate\write18{texcount -sum=[1,0,0] -sub=section #1.tex  | grep "Section" | sed -e 's/+.*//' | sed -n \thesection p > \jobname-words.sum}%
-    \medskip\par\input{\jobname-words.sum} words
+    \immediate\write18{texcount -sum=[1,0,0] -sub=section #1.tex  | grep "Section" | sed -e 's/+.*//' | sed -n \thesection p > ./\jobname-words.sum}%
+    \medskip\par\input{./\jobname-words.sum} words
 }
 
 % CHANGE TO YOU NEEDS HERE
