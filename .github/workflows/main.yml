@@ -19,7 +19,9 @@ jobs:
 
       # compile
       - name: Compile
-        run: pdflatex main.tex
+        run: | 
+          pdflatex main.tex
+          pdflatex main.tex
           
       - name: Rename
         run: mv main.pdf HOBO_Report.pdf
