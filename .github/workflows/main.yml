@@ -20,16 +20,17 @@ jobs:
       # compile
       - name: Compile
         run: | 
+          cd sql_report
           pdflatex main.tex
           pdflatex main.tex
           
       - name: Rename
-        run: mv main.pdf HOBO_Report.pdf
+        run: mv main.pdf SQL_Report.pdf
           
       - name: add and commit
         uses: EndBug/add-and-commit@latest
         with:
-          add: HOBO_Report.pdf
+          add: SQL_Report.pdf
           message: Compiled tex to PDF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
