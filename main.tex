@@ -1,0 +1,65 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% COLORS
+% Use these definitions to change the color in the listings
+\definecolor{green}{rgb}{0,0.6,0}
+
+% CODE LISTINGS
+\lstset{
+    language=SQL,
+    basicstyle=\footnotesize,
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+% biibliography 
+% for citation styles see here: 
+% https://www.overleaf.com/learn/latex/Natbib%20citation%20styles
+%
+% You can export references as bibtex (i.e. on google scholar) and copy them to the bibliography.bib
+% The most important citation commands are: 
+%   \citep{ref} for parenthesis
+%   \citet{ref} for a text citation
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={((},close={))}}
+
+
+% CHANGE TO YOU NEEDS HERE
+\title{HOBO Report: Your title goes here}
+\author{Your Name}
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    An abstract is absolutely not necessary and you can simply drop or comment this part.
+    Alternatively, you can use it to place your contact details:\medskip\par 
+    \begin{tabular}{lc}
+       student-id  & 1234567 \\
+        e-mail & mail@example.com
+    \end{tabular}
+\end{abstract}
+
+\section{Temperature indices}
+
+An overview of temperature indices was implemented using a \texttt{VIEW} as defined in lising \ref{lst:view_1}
+
+\lstinputlisting[label={lst:view_1},caption={create statement for view},]{./sql/temperature_indices.sql}
+  
+
+\section{Chapter 2:}
+
+
+\bibliography{bibliography}
+\end{document}
