@@ -22,6 +22,8 @@ jobs:
         run: | 
           ls -lah
           pdflatex main.tex
+          bibtex main.aux
+          pdflatex main.tex
           pdflatex main.tex
           
       - name: Rename
