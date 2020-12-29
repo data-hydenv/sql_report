@@ -4,6 +4,10 @@ require(readr)
 require(ggplot2)
 require(reshape2)
 
+# This is a really quick script, used as prove of concept.
+# please to not spread scripts like this -> write functions  
+# I will update it soon
+
 # make a database connection
 drv <- dbDriver('PostgreSQL')
 # set the environment variable fist like: export POSTGRESS_PASSWORD=yourpassword
