@@ -20,7 +20,7 @@ jobs:
       # compile
       - name: Compile
         run: | 
-          cd sql_report
+          ls -lah
           pdflatex main.tex
           pdflatex main.tex
           
