@@ -7,8 +7,8 @@
 -- group_avg: This is the time series average, can be used to validate
 --
 -- Uncomment the follwoing two lines to persist this query as a VIEW
-DROP VIEW IF EXISTS data_norm;
-CREATE VIEW data_norm AS
+-- DROP VIEW IF EXISTS data_norm;
+-- CREATE VIEW data_norm AS
 -- From here, it's only a single SQL statement
 SELECT 
 	*,
